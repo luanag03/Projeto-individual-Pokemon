@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+    <div class="pagina">
+
+          <section class="login">
+
+            <div class="login-img">
+
+            <img
+                src="assets/pokemon-login.jpg"
+                class="fundo"
+                alt=""
+            >
+
+
+            <div class="forma-superior"></div>
+            <div class="forma-inferior"></div>
+
+
+        <div class="login-container">
+
+            <img 
+                src="assets/pokemon-titulo.png" 
+                alt="Pokémon"
+                class="logo"
+            >
+
+            <form class="login-form" id="formLogin">
+
+                <div class="input-container">
+                    <span class="icone">♙</span>
+
+                    <input 
+                        type="email" 
+                        id="email"
+                        placeholder="E-MAIL"
+                        required
+                    >
+                </div>
+
+                <div class="input-container">
+                    <span class="icone">♙</span>
+
+                    <input 
+                        type="password" 
+                        id="senha"
+                        placeholder="PASSWORD"
+                        required
+                    >
+                </div>
+
+                <button type="submit">
+                    RETOMAR JORNADA
+                </button>
+
+            </form>
+
+            <p class="cadastro">
+                Não possui conta?
+                <a href="cadastro.html">Cadastre-se</a>
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="/frontend/src/login.js"></script>
+
+</body>
+</html>
