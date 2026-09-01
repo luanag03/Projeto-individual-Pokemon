@@ -34,6 +34,7 @@ formCadastro.addEventListener("submit", async function (evento) {
     }
 
     const sexoSelecionado = document.querySelector('input[name="sexo"]:checked');
+    const pokemonEscolhidoValor = document.getElementById("pokemon").value;
 
     const novoUsuario = {
         nome: document.getElementById("nome").value,
@@ -43,7 +44,7 @@ formCadastro.addEventListener("submit", async function (evento) {
         dataNascimento: document.getElementById("dataNascimento").value,
         sexo: sexoSelecionado ? sexoSelecionado.value : "",
         tiposFavoritos: tiposFavoritosArray.join(","),
-        pokemonInicial: document.getElementById("pokemon").value,
+        pokemonInicial: pokemonEscolhidoValor,
         senha: document.getElementById("senha").value
     };
 
@@ -57,6 +58,8 @@ formCadastro.addEventListener("submit", async function (evento) {
         });
 
         if (resposta.status === 201) {
+            localStorage.setItem("pokemonEscolhido", pokemonEscolhidoValor.toLowerCase());
+
             alert("Jornada iniciada com sucesso! Faça login.");
             window.location.href = "login.html";
         } else {

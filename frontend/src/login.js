@@ -25,6 +25,11 @@ formLogin.addEventListener("submit", async function (evento) {
      
             localStorage.setItem("usuarioLogado", JSON.stringify(usuarioRetornado));
 
+        
+            if (usuarioRetornado.pokemonInicial) {
+                localStorage.setItem("pokemonEscolhido", usuarioRetornado.pokemonInicial.toLowerCase());
+            }
+
             alert("Login realizado com sucesso! Retomando jornada...");
             
             window.location.href = "pokemon.html"; 
