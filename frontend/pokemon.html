@@ -11,10 +11,15 @@
     <div class="pokemon-container">
         <div class="pokemon-slot">
             <img id="gifPokemon" src="" alt="">
+
+            <div id="coracaoClique" class="coracao-animado">❤️</div>
         </div>
     </div>
 
-    <script>
+</body>
+</html>
+
+  <script>
         document.addEventListener("DOMContentLoaded", () => {
             const pokemonSalvo = localStorage.getItem("pokemonEscolhido");
             const imgElement = document.getElementById("gifPokemon");
@@ -24,6 +29,17 @@
                 imgElement.alt = pokemonSalvo;
             }
         });
+        
+    const pokemonGif = document.getElementById("gifPokemon");
+    const coracao = document.getElementById("coracaoClique");
+
+    pokemonGif.addEventListener("click", () => {
+
+        coracao.classList.add("mostrar");
+
+        setTimeout(() => {
+            coracao.classList.remove("mostrar");
+        }, 1000);
+    });
+
     </script>
-</body>
-</html>
