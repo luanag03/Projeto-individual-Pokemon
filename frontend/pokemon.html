@@ -16,6 +16,21 @@
         </div>
     </div>
 
+    <div id="cardTreinador" class="card-treinador">
+        <div class="card-avatar">
+            <img id="avatarTreinador" src="" alt="Avatar do Treinador">
+        </div>
+        <div class="card-infos">
+            <h3 id="cardNome">Nome</h3>
+            <p><strong>Nickname:</strong> <span id="cardNickname"></span></p>
+            <p><strong>Idade:</strong> <span id="cardIdade"></span></p>
+            <p><strong>Nascimento:</strong> <span id="cardNascimento"></span></p>
+            <p><strong>Sexo:</strong> <span id="cardSexo"></span></p>
+            <p><strong>Favoritos:</strong> <span id="cardFavoritos"></span></p>
+            <p><strong>Pokémon:</strong> <span id="cardPokemon"></span></p>
+        </div>
+    </div>
+
 </body>
 </html>
 
@@ -41,5 +56,32 @@
             coracao.classList.remove("mostrar");
         }, 1000);
     });
+
+    const dadosUsuarioString = localStorage.getItem("usuarioLogado");
+
+    if (dadosUsuarioString) {
+        const usuario = JSON.parse(dadosUsuarioString);
+
+        
+        document.getElementById("cardNome").textContent = usuario.nome || "Treinador";
+        document.getElementById("cardNickname").textContent = usuario.nickname || "-";
+        document.getElementById("cardIdade").textContent = usuario.idade || "-";
+        document.getElementById("cardNascimento").textContent = usuario.dataNascimento || "-";
+        document.getElementById("cardSexo").textContent = usuario.sexo || "-";
+        document.getElementById("cardFavoritos").textContent = usuario.tiposFavoritos || "-";
+        document.getElementById("cardPokemon").textContent = usuario.pokemonInicial || "-";
+
+      
+        const avatarImg = document.getElementById("avatarTreinador");
+        const sexo = usuario.sexo ? usuario.sexo.toLowerCase() : "";
+
+        if (sexo === "feminino" || sexo === "f") {
+            avatarImg.src = "assets/icone-Mulher.png"; 
+        } else if (sexo === "masculino" || sexo === "m") {
+            avatarImg.src = "assets/icone-Homem.png"; 
+        } else {
+            avatarImg.src = "assets/icone-Outro.png"; 
+        }
+    }
 
     </script>
