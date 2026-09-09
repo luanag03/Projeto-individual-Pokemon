@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap');
 
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -14,54 +13,40 @@
     text-rendering: optimizeLegibility;
 }
 
-html,
-body {
+html, body {
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
 }
 
 body {
     min-width: 320px;
-    overflow: hidden;
+    overflow-x: hidden;
 }
-
 
 .pagina {
     width: 100vw;
-    height: 100vh;
-
+    min-height: 100vh;
     position: relative;
-
     overflow: hidden;
-
     background: #2550bb;
 }
 
-
 .login {
     width: 100%;
-    height: 100%;
-
+    min-height: 100vh;
     position: relative;
-
     overflow: hidden;
 }
 
-
 .fundo {
     position: absolute;
-
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
     object-position: center;
-
     z-index: 1;
-
     filter: brightness(0.8);
 }
 
@@ -74,7 +59,6 @@ body {
     pointer-events: none;
 }
 
-
 .forma-superior {
     position: absolute;
     z-index: 2;
@@ -84,23 +68,29 @@ body {
     height: 330px;
     background: #2d53c8;
     border-radius: 0 0 0 65%;
+    display: block; 
 }
-
 
 .forma-inferior {
     position: absolute;
-
     z-index: 2;
-
     left: -150px;
     bottom: -150px;
-
     width: 370px;
     height: 300px;
-
     background: #2d53c8;
-
     border-radius: 0 100% 0 0;
+    display: block; 
+}
+
+.logo {
+    position: absolute;
+    top: -30px;
+    left: 25px;
+    width: 300px;
+    height: auto;
+    z-index: 10;
+    display: block;
 }
 
 .conteudo {
@@ -108,240 +98,166 @@ body {
     z-index: 3;
     top: 50%;
     left: 50%;
-    width: 100%;
     transform: translate(-50%, -50%);
-    width: 900px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 45%;
-
+    justify-content: center;
+    padding: 20px;
 }
 
-
-
-.logo {
+#formCadastro, .login-form {
     width: 100%;
-    height: auto;
-
-    display: block;
-
-    margin-bottom: 4px;
-
-    object-fit: contain;
-}
-
-
-#formCadastro {
-    width: 300px;
+    max-width: 380px;
+    background-color: #1e3459;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    margin-top: -100px;
-    
+    gap: 8px;
+    margin-top: 0;
 }
-
 
 .campo {
     width: 100%;
-    height: 40px;
-     display: flex;
+    height: 38px;
+    display: flex;
     align-items: center;
-
-    border: 1px solid rgba(219, 234, 255, 0.9);
-
-    border-radius: 3px;
-
-    background: rgba(40, 79, 160, 0.28);
-
+    border: 1px solid rgba(219, 234, 255, 0.6);
+    border-radius: 5px;
+    background: rgba(40, 79, 160, 0.5);
     transition: .2s;
 }
 
 .campo:focus-within {
-    border-color: white;
-
-    background: rgba(27, 75, 166, 0.45);
-
-    box-shadow:
-        0 0 0 2px rgba(255, 255, 255, .15);
+    border-color: #ffffff;
+    background: rgba(27, 75, 166, 0.75);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, .2);
 }
 
 .icone {
-    width: 25px;
-
+    width: 30px;
     flex-shrink: 0;
-
     text-align: center;
-
     color: #ffffff;
-
-    font-size: 10px;
+    font-size: 12px;
 }
-
 
 .campo > input {
     width: 100%;
     height: 100%;
-
     min-width: 0;
-
-    padding: 0 7px 0 0;
-
+    padding: 0 8px 0 0;
     border: none;
     outline: none;
-
     background: transparent;
-
     color: white;
-
     font-family: inherit;
-
-    font-size: 8px;
-
+    font-size: 12px;
     font-weight: 700;
-
-    letter-spacing: .06em;
+    letter-spacing: .02em;
 }
 
 .campo > input::placeholder {
-    color: rgba(255, 255, 255, .88);
-
+    color: rgba(255, 255, 255, .85);
     opacity: 1;
 }
 
-
 .campo input[type="date"] {
-    padding-left: 7px;
-
-    color: rgba(255, 255, 255, .9);
-
-    font-size: 8px;
+    padding-left: 5px;
+    color: #ffffff;
+    font-size: 11px;
 }
 
 .campo input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
-
-    width: 10px;
+    width: 14px;
+    cursor: pointer;
 }
-
-
 
 .linha-campos {
     width: 100%;
-
     display: grid;
-
-    grid-template-columns: 75px 1fr;
-
-    gap: 6px;
+    grid-template-columns: 85px 1fr;
+    gap: 8px;
 }
-
-
 
 .grupo-opcoes {
     width: 100%;
     color: white;
-
     font-size: 12px;
 }
 
 .grupo-opcoes > p {
-    margin-bottom: 3px;
-
+    margin-bottom: 4px;
     font-size: 13px;
-
     font-weight: 800;
-
     letter-spacing: .04em;
+    color: #ffcb05;
 }
-
-
 
 .opcoes-radio {
     width: 100%;
-
     display: flex;
-
     align-items: center;
-
-    gap: 13px;
+    gap: 12px;
 }
 
 .opcoes-radio label {
     display: flex;
-
     align-items: center;
-
-    gap: 3px;
-
+    gap: 4px;
+    font-size: 12px;
     white-space: nowrap;
-
     cursor: pointer;
 }
 
-
 .opcoes-radio input[type="radio"] {
-    width: 10px !important;
-    height: 10px !important;
-
-    min-width: 10px !important;
-    min-height: 10px !important;
-
+    width: 13px !important;
+    height: 13px !important;
+    min-width: 13px !important;
+    min-height: 13px !important;
     margin: 0;
-
     padding: 0;
-
     appearance: auto;
-
-    accent-color: white;
+    accent-color: #ffcb05;
+    cursor: pointer;
 }
 
 .tipos {
-    margin-top: 1px;
+    margin-top: 2px;
 }
 
 .opcoes-checkbox {
     width: 100%;
-
     display: grid;
-
     grid-template-columns: repeat(4, 1fr);
-
-    gap: 3px 5px;
+    gap: 6px 4px;
 }
 
 .opcoes-checkbox label {
     display: flex;
-
     align-items: center;
-
     gap: 3px;
-
-    font-size: 7px;
-
+    font-size: 10px;
     white-space: nowrap;
-
     cursor: pointer;
 }
 
-
-
 .opcoes-checkbox input[type="checkbox"] {
-    width: 9px !important;
-    height: 9px !important;
-
-    min-width: 9px !important;
-    min-height: 9px !important;
-
+    width: 12px !important;
+    height: 12px !important;
+    min-width: 12px !important;
+    min-height: 12px !important;
     margin: 0;
-
     padding: 0;
-
     appearance: auto;
-
-    accent-color: white;
+    accent-color: #ffcb05;
+    cursor: pointer;
 }
-
 
 .select-campo {
     padding: 0;
@@ -350,93 +266,61 @@ body {
 .select-campo select {
     width: 100%;
     height: 100%;
-
     border: none;
     outline: none;
-
-    padding: 0 7px;
-
+    padding: 0 8px;
     background: transparent;
-
     color: white;
-
     font-family: inherit;
-
-    font-size: 8px;
-
+    font-size: 12px;
     font-weight: 700;
-
     cursor: pointer;
 }
 
 .select-campo select option {
     color: #333;
-
     background: white;
 }
-
 
 
 button {
     width: 100%;
-
-    height: 34px;
-
-    margin-top: 5px;
-
+    height: 38px;
+    margin-top: 6px;
     border: none;
-
-    border-radius: 3px;
-
+    border-radius: 5px;
     background: white;
-
     color: #2550bb;
-
     font-family: inherit;
-
-    font-size: 9px;
-
+    font-size: 13px;
     font-weight: 800;
-
     letter-spacing: .02em;
-
     cursor: pointer;
-
-    box-shadow:
-        0 7px 14px rgba(12, 46, 128, .25);
-
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease;
+    box-shadow: 0 7px 14px rgba(12, 46, 128, .25);
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
 }
 
 button:hover {
+    background: #ffcb05;
+    color: #122543;
     transform: translateY(-2px);
-
-    box-shadow:
-        0 10px 18px rgba(12, 46, 128, .35);
+    box-shadow: 0 10px 18px rgba(12, 46, 128, .35);
 }
 
 button:active {
     transform: translateY(0);
 }
 
-
 .cadastro {
-    margin-top: 7px;
-
+    margin-top: 8px;
     color: rgba(255, 255, 255, .95);
-
-    font-size: 13px;
-
+    font-size: 12px;
     text-align: center;
 }
 
 .cadastro a {
-    color: white;
-
+    color: #ffcb05;
     font-weight: 800;
-
     text-decoration: none;
 }
 
@@ -445,43 +329,21 @@ button:active {
 }
 
 
-
-@media (max-height: 750px) {
-
-    .conteudo {
-        transform: translate(-50%, -50%) scale(.88);
-    }
-
-}
-
-
-@media (max-height: 650px) {
-
-    .conteudo {
-        transform: translate(-50%, -50%) scale(.78);
-    }
-
-}
-
-
 @media (max-width: 600px) {
-
-    .forma-superior {
-        width: 450px;
-        height: 280px;
-
-        right: -130px;
+    .logo {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 0 auto 10px auto;
+        width: 150px;
     }
 
-    .forma-inferior {
-        width: 300px;
-        height: 260px;
-
-        left: -140px;
+    #formCadastro, .login-form {
+        max-width: 100%;
+        padding: 16px;
     }
 
-    .conteudo {
-        transform: translate(-50%, -50%) scale(.9);
+    .opcoes-checkbox {
+        grid-template-columns: repeat(2, 1fr);
     }
-
 }
