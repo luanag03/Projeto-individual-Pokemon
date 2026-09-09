@@ -1,6 +1,5 @@
 package com.projetoindividual.pokemon;
 
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -42,7 +41,19 @@ public class PokemonController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> cadastrar(@Valid @RequestBody Pokemon novoPokemon) {
+    public ResponseEntity<Void> cadastrar(@RequestBody Pokemon novoPokemon) {
+        if (novoPokemon.getNome() == null || novoPokemon.getNome().isEmpty()) {
+            return ResponseEntity.status(400).build();
+        }
+
+        if (novoPokemon.getTipo() == null || novoPokemon.getTipo().isEmpty()) {
+            return ResponseEntity.status(400).build();
+        }
+
+        if (novoPokemon.getDescricao() == null || novoPokemon.getDescricao().isEmpty()) {
+            return ResponseEntity.status(400).build();
+        }
+
         String sql = "INSERT INTO pokemon (nome, tipo, descricao) VALUES (?, ?, ?)";
 
         jdbcTemplate.update(
