@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Pokémon - Cadastro</title>
-
     <link rel="stylesheet" href="css/cadastro.css">
 </head>
 <body>
 
     <main class="pagina">
-
         <section class="login">
 
             <img
@@ -20,7 +17,6 @@
                 alt=""
             >
 
-        
             <div class="forma-superior"></div>
             <div class="forma-inferior"></div>
 
@@ -32,48 +28,39 @@
                     alt="Pokémon"
                 >
 
-                <form id="formCadastro">
+                <form id="formCadastro" novalidate>
 
                     <div class="campo">
                         <span>♙</span>
-
                         <input
                             type="text"
                             id="nome"
                             name="nome"
                             placeholder="NOME"
-                            required
                         >
                     </div>
 
                     <div class="campo">
                         <span>♙</span>
-
                         <input
                             type="text"
                             id="nickname"
                             name="nickname"
                             placeholder="NICKNAME"
-                            required
                         >
                     </div>
 
                     <div class="campo">
                         <span>✉</span>
-
                         <input
                             type="email"
                             id="email"
                             name="email"
                             placeholder="E-MAIL"
-                            required
                         >
                     </div>
 
-
                     <div class="campo">
-                        
-
                         <input
                             type="number"
                             id="idade"
@@ -81,24 +68,18 @@
                             placeholder="IDADE"
                             min="1"
                             max="120"
-                            required
                         >
                     </div>
 
-
                     <div class="campo">
-
                         <input
                             type="date"
                             id="dataNascimento"
                             name="dataNascimento"
-                            required
                         >
                     </div>
 
-
                     <div class="grupo-opcoes">
-
                         <p>SEXO:</p>
 
                         <label>
@@ -106,7 +87,6 @@
                                 type="radio"
                                 name="sexo"
                                 value="Masculino"
-                                required
                             >
                             Masculino
                         </label>
@@ -128,11 +108,9 @@
                             >
                             Outro
                         </label>
-
                     </div>
 
                     <div class="grupo-opcoes">
-
                         <p>TIPOS DE POKÉMON FAVORITOS:</p>
 
                         <label>
@@ -206,41 +184,27 @@
                             >
                             Psíquico
                         </label>
-
                     </div>
 
-
                     <div class="campo select-campo">
-
                         <select
                             id="pokemon"
                             name="pokemon"
-                            required
                         >
-
                             <option value="">
                                 SELECIONE SEU POKÉMON
                             </option>
-
                         </select>
-
                     </div>
 
                     <div class="campo">
-
-                    
-
                         <input
                             type="password"
                             id="senha"
                             name="senha"
                             placeholder="SENHA"
-                            required
                         >
-
                     </div>
-
-
 
                     <button type="submit">
                         INICIAR JORNADA
@@ -249,23 +213,17 @@
                 </form>
 
                 <p class="cadastro">
-
                     Já possui conta?
-
                     <a href="login.html">
                         Faça Login
                     </a>
-
                 </p>
 
             </div>
-
         </section>
-
     </main>
 
     <script src="/frontend/src/cadastro.js"></script>
 
 </body>
-
 </html>
