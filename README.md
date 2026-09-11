@@ -153,9 +153,7 @@ Com o back-end e o front-end em execução, utilize a interface para:
 **Luana Gomes**
 
 📘 *SPTech School*
-
-🔗 GitHub: [https://github.com/luanag03](https://github.com/luanag03)
-
 ```
+🔗 GitHub: [https://github.com/luanag03](https://github.com/luanag03)
 
 ```
